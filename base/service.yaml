@@ -1,11 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-app-service
+  name: fe-service
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
     - port: 3030
       targetPort: 3030
+      nodePort: 30300
   selector:
     app: moon-music
