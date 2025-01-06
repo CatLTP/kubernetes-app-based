@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: moon-music
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: moon-music
+  template:
+    metadata:
+      labels:
+        app: moon-music
+    spec:
+      containers:
+        - name: moon-music-fe
+          image: phuongcat02/moon-music:0.1
+          ports:
+            - containerPort: 3030
